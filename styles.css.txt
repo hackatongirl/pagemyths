@@ -1,0 +1,79 @@
+/* Общие стили для страницы */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* Контейнер для карточек */
+#flashcards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+}
+
+/* Стили для каждой карточки */
+.flashcard {
+  width: 200px;
+  height: 300px;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out, box-shadow 0.3s ease;
+}
+
+.flashcard:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для передней и задней стороны карточки */
+.front, .back {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+
+.front {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+.back {
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  transform: rotateY(180deg);
+}
+
+/* Переворачивание карточек */
+.flashcard:hover .front {
+  transform: rotateY(180deg);
+}
+
+.flashcard:hover .back {
+  transform: rotateY(0deg);
+}
